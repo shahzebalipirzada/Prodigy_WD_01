@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tandoori Tales</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="Tandoori.png" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+    </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: arial;
+    }
+    nav{
+      width: 100%;
+      height: 10vh;
+      background-color: rgba(0, 0, 0, 0.244);
+      justify-content: center;
+      position: fixed;
+      z-index: 1000;
+      
+      
+    }
+    nav ul{
+      margin-top: 2vh;
+      height:auto;
+      display: flex;
+      justify-content: center;
+       float: right;
+     }
+    nav ul li{
+      display: inline;
+      padding: 10px;
+    }
+    nav ul li a{
+      text-decoration: none;
+      font-weight: bolder;
+      color:white;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size:1.1250em;
+      letter-spacing: 0.5px;
+    }
+    nav ul p{
+      font-size: 2em;
+      display: none;
+      padding: 8px;
+      cursor: pointer;
+      color: maroon;
+    }
+    nav ul li a::after{
+      content: "";
+      width: 0%;
+      background-color:rgb(165, 0, 0);
+      height: 3px;
+      position:absolute;
+      left: 0;
+      bottom: -7px;
+      transition:0.2s;
+
+    }
+    nav ul li a:hover::after{
+      width: 100%;
+    }
+    .logo{
+      width: 13rem;
+    }
+    .main-hero{
+      background:radial-gradient(white, rgba(135, 207, 235, 0.326),rgba(84, 84, 255, 0.285)) ,url(hero-bg.avif);
+      width: 100%;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .m-nav{
+      display: none;
+    }
+    .main-hero .content{
+    text-align: center;
+      
+      
+      
+      
+      width: 60%;
+      height: auto;
+    }
+    .main-hero .content h1{
+      font-size: 2.1em;
+    }
+    .main-hero .content h3{
+      font-size: 1.3em;
+    }
+    .about{
+      height: 100vh;
+      width: 100%;
+    }
+    .about .main-ab{
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media screen and (max-width:480px) {
+      nav ul p{
+        display: block;
+      }
+      nav ul li{
+        display: none;
+      }
+      .nav{
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        display: none;
+      }
+      .nav .menu ul li{
+        padding:10px ;
+      }
+      .nav .menu ul li a{
+      text-decoration: none;
+      font-weight: bolder;
+      color:white;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size:1.1250em;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav .menu ul li a::after{
+        content: "";
+      width: 0%;
+      background-color:rgb(165, 0, 0);
+      height: 3px;
+      position:absolute;
+      left: 0;
+      bottom: -7px;
+      transition:0.2s;
+      
+    }
+    
+    nav ul li a:hover::after{
+      width: 100%;
+    }
+      
+    
+  }
+
+   /* Masonry layout using CSS columns */
+   .masonry {
+            column-count: 3;
+            column-gap: 1rem;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry {
+                column-count: 1;
+            }
+        }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
+    <img class="logo" src="Tales.png" alt="">
+    
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+      
+      <p id="n-btn"><i class="fa-solid fa-bars"></i></p>
+    </ul>
+    
+  </nav>
+  <div class="m-nav" id="m-nav">
+    <div class="menu">
+      <ul>
+        <li><a id="n-btn-l1" href="#">Home</a></li>
+        <li><a id="n-btn-l2" href="#about">About</a></li>
+        <li><a id="n-btn-l3" href="#menu">Menu</a></li>
+        <li><a id="n-btn-l4" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <section id="home">
+    <div class="main-hero">
+      <div class="content">
+        <h1>Welcome to <span style="color: maroon; font-family:Brush Script MT;">Tandoori Tales</span></h1><br>
+        <h3>Authentic Tandoori Delights</h3><br>
+        <p>Experience the rich flavors of traditional tandoori cuisine at Tandoori Tales. Enjoy our succulent Tandoori Chicken, flavorful Paneer Tikka, fresh Naan Bread, and creamy Butter Chicken. Our dishes are crafted with authentic recipes and the freshest ingredients, all served in a warm, inviting atmosphere. Dine in or order online for a taste of tandoori luxury.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about">
+    <div class="px-4 py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4" src="Tandoori.png" alt="" width="72" height="57">
+      <h1 class="display-5 fw-bold text-body-emphasis">About <span style="color: maroon; font-family: Brush Script MT;">US</span></h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" style="background-color: maroon;" class="btn text-white rounded-5 btn-lg px-4 gap-3">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="menu">
+    <div class="container">
+      <p class="h1 text-center">Our <span style="color: maroon; font-family: Brush Script MT; border-bottom:4px solid black;">Menu</span></p>
+      <div class="masonry">
+        <div class="masonry-item">
+          <div class="card">
+            <img src="mb.jpg" class="card-img-top rounded-4" alt="green iguana" />
+            <div class="card-img-overlay text-white">
+              <h4>Chicken Biryani</h4>
+              <p class="card-text">
+                A flavorful blend of aromatic basmati rice, tender chicken, and a rich mix of spices. This traditional dish is a celebration of flavors, perfect for any occasion.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <div class="card">
+            <img src="m1.jpg" class="card-img-top rounded-4" alt="green iguana" />
+            <div class="card-img-overlay text-white">
+              <h4>Broccoli and Kale</h4>
+              <p class="card-text">
+                A nutrient-packed dish with sautéed broccoli and kale, tossed in a garlic and chili-infused oil. Served on a sleek platter, it’s a modern twist on classic greens, perfect for health-conscious diners.
+              </p>
+            </div>
+          </div>
+        </div>
+      <div class="masonry-item">
+        <div class="card">
+          <img src="m4.jpg" class="card-img-top rounded-4" alt="green iguana" />
+          <div class="card-img-overlay text-white">
+            <h4>Masala Omelette</h4>
+            <p class="card-text">
+              A fluffy omelette infused with finely chopped onions, tomatoes, and green chilies. A spicy and savory breakfast option, perfect to kickstart your day.
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="masonry-item">
+          <div class="card">
+            <img src="m3.jpg" class="card-img-top rounded-4" alt="green iguana" />
+            <div class="card-img-overlay text-white">
+              <h4>Zucchini Stir-Fry</h4>
+              <p class="card-text">
+                Fresh zucchini slices stir-fried with garlic, herbs, and a hint of lemon. This light and refreshing dish is served elegantly on a white plate, showcasing the vibrant green colors.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <div class="card">
+            <img src="m5.jpg" class="card-img-top rounded-4" alt="green iguana" />
+            <div class="card-img-overlay text-white">
+              <h4>Special Round Samosa</h4>
+              <p class="card-text">
+                Crispy, golden pastry stuffed with a flavorful mixture of spiced potatoes and peas. This round twist on a classic samosa is a delightful snack with every bite.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="masonry-item">
+          <div class="card">
+            <img src="m6.jpg" class="card-img-top rounded-4" alt="green iguana" />
+            <div class="card-img-overlay text-white">
+              <h4>Asparagus and Spinach Bhurji</h4>
+              <p class="card-text">
+                Tender asparagus and spinach sautéed with onions, tomatoes, and mild spices. This dish is presented in a minimalist style, with the bright greens beautifully arranged on a square plate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  </section>
+  <br>
+  <hr>
+  <section id="contact">
+    <div class="container mt-5 rounded-3 py-5">
+      <div id="contact" class="contact-area section-padding">
+        <div class="container">										
+          <div class="section-title text-center">
+            <img src="Tandoori.png" class="bi  mb-3" width="100" height="100">
+    
+            <h1>Get in <span style="color: maroon; font-family: Brush Script MT;">Touch</span></h1>
+            <p>For reservations, inquiries, or feedback, we're here to help. Visit, call, or email us, and we'll ensure your Tandoori Tales experience is exceptional.</p>
+          </div>					
+          <div class="row">
+            <div class="col-lg-7">	
+              <div class="contact">
+                <form class="form" name="enq" method="post" action="" onsubmit="return validation();">
+                  <div class="row">
+                    <div class="form-group col-md-6 mt-4">
+                      <input type="text" name="name" class="form-control" placeholder="Name" required="required">
+                    </div>
+                    <div class="form-group col-md-6 mt-4">
+                      <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+                    </div>
+                    
+                    <div class="form-group col-md-12 mt-4">
+                      <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+                    </div>
+                   
+                    <div class="form-group col-md-12 mt-4">
+                      <textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
+                    </div>
+                    <div class="col-md-12 text-center mt-4">
+                      <button type="submit" value="Send message" name="submit" id="submitButton" class="btn text-white" style="background-color: maroon;" title="Submit Your Message!">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div><!--- END COL --> 
+            <div class="col-lg-5 tt mt-4">
+              <div class="single_address">
+                <!-- <i class="fa fa-map-marker"></i> -->
+                <h4><svg style="color: maroon;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-geo-alt-fill col-primary" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+                </svg> Our Address</h4>
+                <p> DHA ,Lahore</p>
+              </div>
+              <div class="single_address">
+                <!-- <i class="fa fa-envelope"></i> -->
+                <h4><svg style="color: maroon;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                  <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"></path>
+                  <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"></path>
+                </svg> Send your message</h4>
+                <p>tandooritales@gmail.com</p>
+              </div>
+              <div class="single_address">
+                <!-- <i class="fa fa-phone"></i> -->
+                <h4><svg style="color: maroon;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                </svg> Call us on</h4>
+                <p>(+92) 334 3455433 </p>
+              </div>
+              <div class="single_address">
+                <i class="fa fa-clock-o"></i>
+                <h4><svg style="color: maroon;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-calendar-check-fill" viewBox="0 0 16 16">
+                  <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"></path>
+                </svg> Timing</h4>
+                <p>Sat - Thu: 09.00am - 08.00pm</p>
+              </div>					
+            </div><!--- END COL --> 
+          </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->	
+      </div>
+    </div>
+  </section>
+  <section>
+    
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
+    
+        <a href="#home" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="Tales.png" height="40" width="auto" alt="">
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#home" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link px-2 text-muted">About</a></li>
+          <li class="nav-item"><a href="#menu" class="nav-link px-2 text-muted">Menu</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link px-2 text-muted">Contact</a></li>
+        </ul>
+      </footer>
+    </div>
+  </section>
+  <script>
+    var nav = document.getElementById("m-nav");
+    var nbtn = document.getElementById("n-btn");
+    var nbtnl1 = document.getElementById("n-btn-l1");
+    var nbtnl2 = document.getElementById("n-btn-l2");
+    var nbtnl3 = document.getElementById("n-btn-l3");
+    var nbtnl4 = document.getElementById("n-btn-l4");
+
+
+    nbtn.addEventListener('click', display)
+    nbtnl1.addEventListener('click', display);
+    nbtnl2.addEventListener('click', display);
+    nbtnl4.addEventListener('click', display);
+    nbtnl5.addEventListener('click', display);
+
+    
+      function display(){
+    if(nav.style.display=="none"){
+      nav.style.display="flex";
+    }else{
+      nav.style.display="none";
+    }
+  }
+    
+  </script>
+</body>
+</html>
